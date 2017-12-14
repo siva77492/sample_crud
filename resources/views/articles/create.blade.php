@@ -42,6 +42,36 @@
                                         <input type="body"  name ="body" class="form-control" id="inputEmail3" placeholder="body">
                                     </div>
                                 </div>
+                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Author</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">published Date</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Book Rate </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Book weight</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Printing By </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- /.box-body -->

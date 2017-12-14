@@ -19,8 +19,3 @@ Route::post('/articles/insert', 'ArticleController@add');
 Route::get('/articles/edit/{id}', 'ArticleController@edit');
 Route::get('/articles/delete/{id}', 'ArticleController@delete');
 Route::post('/articles/update', 'ArticleController@update');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
