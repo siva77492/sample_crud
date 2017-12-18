@@ -15,6 +15,6 @@ class Articles extends Model
     protected $table = 'articles';
 
     protected $fillable = [
-        'title', 'body'
+        'title', 'body', 'or_images','rating', 'writer'
     ];
 }

@@ -27,9 +27,31 @@ public function create()
     {    
          $data = $request->validate([
         'title' => 'required',
-        'body' => 'required',]);
-         DB::table('articles')->insert($data);
+        'body' => 'required',
+        'or_image' => 'required',
+        'rating' => 'required',
+        'writer' => 'required']);
+
+         if (request()->hasFile('or_image'))
+             {
+        $file = request()->file('or_image');
+        $fileName = time().'.'.$file->getClientOriginalName();
+        $destinationPath = public_path('/asset/upload');
+        $file->move($destinationPath, $fileName);  
+
+            }
+
+        
+        $text="good";
+        DB::table('articles')->insert([
+        'title' => request()->get('title'),
+        'body' => request()->get('body'),
+        'or_image' =>$fileName,
+        'rating' => $text,
+        'writer' => request()->get('writer')]
+        );   
          return redirect()->back()->with('message', 'article added sucessfully');
+      
     }   
 
 public function delete($id)
@@ -52,8 +74,7 @@ public function delete($id)
         'title' => 'required',
         'body' => 'required',]);
         DB::table('articles')->where('id',$request->id)->update($data);
-        return redirect()->back()->with('update', 'article updated sucessfully');
+         return redirect()->back()->with('update', 'article updated sucessfully');
     }
+
 }
-
-

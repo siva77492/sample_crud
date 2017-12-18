@@ -17,6 +17,9 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->string('or_image');
+            $table->string('rating');
+            $table->string('writer');
             $table->timestamps();
         });
     }
