@@ -24,10 +24,12 @@ public function create()
 
 
  public function add(Request $request) 
-    {
-         $data = ['title'=>$request->title, 'body'=>$request->body];
+    {    
+         $data = $request->validate([
+        'title' => 'required',
+        'body' => 'required',]);
          DB::table('articles')->insert($data);
-       return redirect()->back()->with('message', 'article added sucessfully');
+         return redirect()->back()->with('message', 'article added sucessfully');
     }   
 
 public function delete($id)
@@ -41,20 +43,18 @@ public function delete($id)
 
       $article = DB::table('articles')->where('id', $id)->first();
             return view('articles.edit',compact('article'))->with('id',$id);
-           // $data= Articles::find($id);
-        // if(count($data)>0)
-        // {
-        //     return view('articles.edit',['data'=>dat])
-
-        // }
     }
 
  public function update(Request $request)
     {
         
-        $data = ['title'=>$request->title, 'body'=>$request->body];
+        $data = $request->validate([
+        'title' => 'required',
+        'body' => 'required',]);
         DB::table('articles')->where('id',$request->id)->update($data);
          return redirect()->back()->with('update', 'article updated sucessfully');
     }
 
 }
+
+

@@ -47,3 +47,5 @@
   </div>
 </body>
 </html>
+
+<script type="text/javascript" src="{{asset('/assets/plugin/jquery.validate.js')}}"></script>

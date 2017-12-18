@@ -21,6 +21,15 @@
         {{ session()->get('update') }}
     </div>
 @endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     
     <div class="row" style="margin: 0px 0px 40px 0px !important;">
                 <form method="post" action="{{url('articles/update')}}">
@@ -34,13 +43,17 @@
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" value="{{ $article->title }}" name="title" class="form-control" id="inputEmail3" placeholder="title">
+                                        <input type="text" value="{{ $article->title }}" name="title" class="form-control" id="inputEmail3" placeholder="title"   data-validation="length alphanumeric" data-validation-length="min10" 
+                                        data-validation-error-msg="pls enter min length 10 characters">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">body</label>
                                     <div class="col-sm-10">
-                                        <input type="body" value="{{ $article->body }}" name ="body" class="form-control" id="inputEmail3" placeholder="body">
+                                        <input type="body" value="{{ $article->body }}" name ="body" class="form-control" id="inputEmail3" placeholder="body"
+                                        data-validation="length alphanumeric" data-validation-length="min25"
+                                        data-validation-error-msg="pls enter min length 25 characters"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -56,3 +69,10 @@
 
 </body>
 </html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+  $.validate({
+    lang: 'en'
+  });
+</script>

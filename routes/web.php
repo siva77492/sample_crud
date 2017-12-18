@@ -19,3 +19,5 @@ Route::post('/articles/insert', 'ArticleController@add');
 Route::get('/articles/edit/{id}', 'ArticleController@edit');
 Route::get('/articles/delete/{id}', 'ArticleController@delete');
 Route::post('/articles/update', 'ArticleController@update');
+Route::get('/image-crop', 'ImageController@imageCrop');
+Route::post('/image-crop', 'ImageController@imageCropPost');
