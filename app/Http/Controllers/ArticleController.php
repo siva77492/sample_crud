@@ -54,7 +54,6 @@ public function delete($id)
         DB::table('articles')->where('id',$request->id)->update($data);
         return redirect()->back()->with('update', 'article updated sucessfully');
     }
-
 }
 
 
