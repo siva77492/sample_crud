@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 5.5 Pagination Example</title>
+    <title>sample application</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="relative/path/to/your/javascript.js"></script>
@@ -48,4 +48,3 @@
 </body>
 </html>
 
-<script type="text/javascript" src="{{asset('/assets/plugin/jquery.validate.js')}}"></script>
