@@ -31,6 +31,7 @@
     </div>
 @endif
     
+    
     <div class="row" style="margin: 0px 0px 40px 0px !important;">
                 <form method="post" name ="registration" id="form1" action="{{url('/articles/insert/')}}">
           {{csrf_field()}}

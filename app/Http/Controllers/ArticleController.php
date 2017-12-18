@@ -52,7 +52,7 @@ public function delete($id)
         'title' => 'required',
         'body' => 'required',]);
         DB::table('articles')->where('id',$request->id)->update($data);
-         return redirect()->back()->with('update', 'article updated sucessfully');
+        return redirect()->back()->with('update', 'article updated sucessfully');
     }
 
 }
