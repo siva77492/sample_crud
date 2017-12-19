@@ -38,13 +38,11 @@ public function create()
              {
         $file = request()->file('or_image');
         $fileName = time().'.'.$file->getClientOriginalName();
-        $destinationPath = asset('/asset/upload');
+        $destinationPath = public_path('/asset/upload/');
         $file->move($destinationPath, $fileName);  
 
             }
-
-        
-        $text="good";
+       $text="good";
         DB::table('articles')->insert([
         'title' => request()->get('title'),
         'body' => request()->get('body'),
