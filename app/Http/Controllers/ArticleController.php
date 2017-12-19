@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Articles;
 use DB;
+use Intervention\Image\Facades\Image as Image;
+
 class ArticleController extends Controller
 {
     /**
