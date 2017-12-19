@@ -38,9 +38,9 @@ public function create()
              {
         $file = request()->file('or_image');
         $fileName = time().'.'.$file->getClientOriginalName();
-        $destinationPath = asset('/asset/upload/');
+        $destinationPath = public_path('/asset/upload/');
         $file->move($destinationPath, $fileName);  
-
+        
              }
         $values =$request->rating;
         $text= implode(",",$values);
@@ -82,7 +82,7 @@ public function delete($id)
              {
         $file = request()->file('or_image');
         $fileName = time().'.'.$file->getClientOriginalName();
-        $destinationPath = asset('/asset/upload/');
+        $destinationPath = public_path('/asset/upload/');
         $file->move($destinationPath, $fileName);  
             }
         $values =$request->rating;
