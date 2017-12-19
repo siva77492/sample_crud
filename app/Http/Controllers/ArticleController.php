@@ -37,7 +37,7 @@ public function create()
          if (request()->hasFile('or_image'))
              {
         $file = request()->file('or_image');
-        $fileName = time().'.'.$file->getClientOriginalName();
+        $fileName = time().'.'.$file->getClientOriginalExtension();
         $destinationPath = public_path('/asset/upload/');
         $file->move($destinationPath, $fileName);  
 
