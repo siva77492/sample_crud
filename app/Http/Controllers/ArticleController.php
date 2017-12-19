@@ -40,9 +40,10 @@ public function create()
         $fileName = time().'.'.$file->getClientOriginalName();
         $destinationPath = public_path('/asset/upload/');
         $file->move($destinationPath, $fileName);  
+        
 
             }
-       $text="good";
+       $text="good";s
         DB::table('articles')->insert([
         'title' => request()->get('title'),
         'body' => request()->get('body'),
