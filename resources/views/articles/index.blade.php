@@ -31,7 +31,6 @@
             <th>Name</th>
             <th>Email</th>
              <th>images</th>
-             <th>rating</th>
              <th>writer</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -43,8 +42,7 @@
                     <td>{{ $values->title }}</td>
                     <td>{{ $values->body }}</td>
 
-        <td><img src="{{ asset('/asset/upload/' . $values->or_image)  }}" style="width: 50px; height: 50px;" /></td>
-                    <td>{{ $values->rating }}</td>
+        <td><img src="{{ asset('/asset/upload/'. $values->or_image)  }}" style="width: 50px; height: 50px;" /></td>
                       <td>{{ $values->writer }}</td>
 
               <td> <a class="btn btn-info"  href="{{ url('articles/edit',$values->id) }}" > edit </a></td>

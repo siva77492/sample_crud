@@ -40,11 +40,10 @@ public function create()
         $fileName = time().'.'.$file->getClientOriginalName();
         $destinationPath = public_path('/asset/upload/');
         $file->move($destinationPath, $fileName);  
-        
-
-            }
-       $text="good";s
-        DB::table('articles')->insert([
+             }
+        $values =$request->rating;
+        $text= implode(",",$values);
+        DB::table('articles')->insert([ 
         'title' => request()->get('title'),
         'body' => request()->get('body'),
         'or_image' =>$fileName,
@@ -64,8 +63,9 @@ public function delete($id)
   public function edit($id)
     {
 
-      $article = DB::table('articles')->where('id', $id)->first();
-            return view('articles.edit',compact('article'))->with('id',$id);
+      $articles = DB::table('articles')->where('id', $id)->first();
+      $rating = explode(",", $articles->rating);
+      return view('articles.edit',compact('articles','rating'))->with('id',$id);
     }
 
  public function update(Request $request)
@@ -73,8 +73,27 @@ public function delete($id)
         
         $data = $request->validate([
         'title' => 'required',
-        'body' => 'required',]);
-        DB::table('articles')->where('id',$request->id)->update($data);
+        'body' => 'required',
+        'rating' => 'required',
+        'writer' => 'required']);
+
+         if (request()->hasFile('or_image'))
+             {
+        $file = request()->file('or_image');
+        $fileName = time().'.'.$file->getClientOriginalName();
+        $destinationPath = public_path('/asset/upload/');
+        $file->move($destinationPath, $fileName);  
+            }
+        $values =$request->rating;
+        $text= implode(",",$values);
+
+        DB::table('articles')->where('id',$request->id)->update([ 
+        'title' => request()->get('title'),
+        'body' => request()->get('body'),
+        'rating' => $text,
+        'writer' => request()->get('writer'),]
+        );   
+        // DB::table('articles')->where('id',$request->id)->update($data);
          return redirect()->back()->with('update', 'article updated sucessfully');
     }
 

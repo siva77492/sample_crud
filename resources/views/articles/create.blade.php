@@ -70,29 +70,29 @@
                                          data-validation-allowing="jpg, png, gif"
                                          data-validation-max-size="1m"
                                          data-validation-error-msg-size="You can not upload images larger than "
-                                        class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                         class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
                                             </div>
                                      </div>
                                      <div class="form-group">
                                         <label class="col-sm-2 control-label"> select one </label>
                                         <div class="col-sm-10">
                                               <fieldset>
-                                            <input  type="checkbox"  name ="rating[]"class="form-check-input"  data-validation="checkbox_group" value="good" 
-                                            data-validation-qty="min1">Good
+                                            <input  type="checkbox"  name ="rating[]"class="form-check-input"  data-validation="checkbox_group" value="1" 
+                                            data-validation-qty="max1"  data-validation-error-msg="choose one option">Good
                                                <input  type="checkbox"  name ="rating[]"class="form-check-input" data-validation="checkbox_group" 
-                                            data-validation-qty="min1" value="very good"> very Good
+                                            data-validation-qty="max1" value="2"> very Good
                                                   
                                              </fieldset>   
                                         </div>   
                                         </div> 
                                         <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">Wirter Name</label>
-                                    <div class="col-sm-10">
+                                         <label for="inputEmail3" class="col-sm-2 control-label">Wirter Name</label>
+                                            <div class="col-sm-10">
                                         <input type="body"  name ="writer" id="writer" class="form-control" placeholder="wirtten by" data-validation=" alphanumeric" 
                                         data-validation-error-msg="pls enter Wirter Name"
                                         >
-                                    </div>     
-                                </div>
+                                            </div>     
+                                      </div>
                                                 
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <script>
   $.validate({
-    lang: 'es', 
+    lang: 'en'
 
   });
 

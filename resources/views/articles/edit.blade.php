@@ -3,6 +3,12 @@
 <head>
     <title>new</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    .form-group
+    {
+            padding: 15px;
+    }
+</style>
 </head>
 <body>
 
@@ -43,19 +49,57 @@
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" value="{{ $article->title }}" name="title" class="form-control" id="inputEmail3" placeholder="title"   data-validation="length alphanumeric" data-validation-length="min10" 
+                                        <input type="text" value="{{ $articles->title }}" name="title" class="form-control" id="inputEmail3" placeholder="title"   data-validation="length alphanumeric" data-validation-length="min10" 
                                         data-validation-error-msg="pls enter min length 10 characters">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">body</label>
                                     <div class="col-sm-10">
-                                        <input type="body" value="{{ $article->body }}" name ="body" class="form-control" id="inputEmail3" placeholder="body"
+                                        <input type="body" value="{{ $articles->body }}" name ="body" class="form-control" id="inputEmail3" placeholder="body"
                                         data-validation="length alphanumeric" data-validation-length="min25"
                                         data-validation-error-msg="pls enter min length 25 characters"
                                         >
                                     </div>
                                 </div>
+
+                               <div class="form-group">
+                                        <label for="exampleInputFile" class="col-sm-2 control-label">Current Images</label>
+                                            <div class="col-md-10">
+                                        <img  name ="oldimages" src="{{ asset('/asset/upload/'. $articles->or_image)  }}" style="width: 150px; height: 80px;" />
+                                            </div>
+                                     </div>
+                                     <br>
+                               <!-- <div class="form-group">
+                                        <label for="exampleInputFile" class="col-sm-2 control-label">File input</label>
+                                            <div class="col-md-10">
+                                        <input type="file" name ="or_image"  requird   id="or_image" id="exampleInputFile" aria-describedby="fileHelp">
+
+
+                                            </div>
+                                     </div> -->
+                           
+                                     <div class="form-group">
+                                        <label class="col-sm-2 control-label"> select one </label>
+                                        <div class="col-sm-10">
+                                              <fieldset>
+                                             
+                                            <input  type="checkbox"  name ="rating[]" class="form-check-input"  data-validation="checkbox_group"  data-validation-qty="max1"  data-validation-error-msg="choose one option" value= "1" {{ in_array(1, $rating)?'checked':  ''}}
+                                            >Good
+                                               <input  type="checkbox"  name ="rating[]"class="form-check-input" data-validation="checkbox_group" 
+                                            data-validation-qty="max1" value="2" {{ in_array(2, $rating)?'checked':  ''}} > very Good
+                                                  
+                                             </fieldset>   
+                                        </div>   
+                                        </div> 
+                                        <div class="form-group">
+                                         <label for="inputEmail3" class="col-sm-2 control-label">Wirter Name</label>
+                                            <div class="col-sm-10">
+                                        <input type="body"  name ="writer" id="writer" class="form-control" value ="{{ $articles->writer }}" placeholder="wirtten by" data-validation=" alphanumeric" 
+                                        data-validation-error-msg="pls enter Wirter Name"
+                                        >
+                                            </div>     
+                                      </div>
                             </div>
                         </div>
                         <!-- /.box-body --> 
