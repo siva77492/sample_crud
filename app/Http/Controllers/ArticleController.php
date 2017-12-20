@@ -23,8 +23,6 @@ public function create()
     {
         return view('articles.create');
     }
-
-
  public function add(Request $request) 
     {    
          $data = $request->validate([
@@ -39,6 +37,8 @@ public function create()
         $file = request()->file('or_image');
         $fileName = time().'.'.$file->getClientOriginalExtension();
         $destinationPath = public_path('/asset/upload/');
+        echo $destinationPath;
+        exit();
         $file->move($destinationPath, $fileName);  
 
              }
